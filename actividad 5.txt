@@ -1,0 +1,40 @@
+1.
+SELECT film_id, title FROM film;
+2.
+SELECT * FROM film LIMIT 5;
+3.
+SELECT * FROM film WHERE film_id < 4;
+4.
+SELECT * FROM film WHERE rating IN ('PG', 'G');
+5.
+SELECT * FROM actor WHERE first_name IN ('Angela', 'Angelina', 'Audrey');
+6.
+SELECT * FROM actor WHERE first_name = 'Julia';
+7.
+SELECT * FROM actor WHERE first_name IN ('Chris', 'Cameron', 'Cuba');
+8.
+SELECT * FROM customer WHERE first_name = 'Jamie' AND last_name = 'Rice';
+9.
+SELECT amount, payment_date FROM payment WHERE amount < 1.0;
+10.
+SELECT DISTINCT rental_duration FROM film;
+11.
+SELECT * FROM city ORDER BY country_id, city;
+12.
+SELECT customer_id FROM rental ORDER BY return_date DESC LIMIT 3;
+13.
+SELECT rating, COUNT(*) FROM film GROUP BY rating;
+14.
+SELECT COUNT(DISTINCT customer_id) FROM rental;
+15.
+SELECT last_name, COUNT(*) FROM customer GROUP BY last_name HAVING COUNT(*) > 1;
+16.
+SELECT film_id, COUNT(*) FROM film_actor GROUP BY film_id ORDER BY COUNT(*) DESC LIMIT 1;
+17.
+SELECT actor_id, COUNT(*) FROM film_actor GROUP BY actor_id ORDER BY COUNT(*) DESC LIMIT 1;
+18.
+SELECT actor_id, COUNT(*) FROM film_actor GROUP BY actor_id ORDER BY COUNT(*) DESC LIMIT 1;
+19.
+SELECT ROUND(AVG(rental_rate), 2) FROM film;
+20.
+SELECT CONCAT(first_name, ' ', last_name) AS full_name FROM actor ORDER BY LENGTH(CONCAT(first_name, last_name)) DESC LIMIT 10;
